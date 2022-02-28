@@ -66,7 +66,7 @@
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(139, 374);
+            this.tabControl.Size = new System.Drawing.Size(209, 374);
             this.tabControl.TabIndex = 0;
             // 
             // tabPageHSV
@@ -248,7 +248,7 @@
             this.tabPageSettings.Controls.Add(this.propertyGrid);
             this.tabPageSettings.Location = new System.Drawing.Point(4, 22);
             this.tabPageSettings.Name = "tabPageSettings";
-            this.tabPageSettings.Size = new System.Drawing.Size(131, 348);
+            this.tabPageSettings.Size = new System.Drawing.Size(201, 348);
             this.tabPageSettings.TabIndex = 2;
             this.tabPageSettings.Text = "Settings";
             this.tabPageSettings.UseVisualStyleBackColor = true;
@@ -258,7 +258,7 @@
             this.propertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGrid.Location = new System.Drawing.Point(0, 0);
             this.propertyGrid.Name = "propertyGrid";
-            this.propertyGrid.Size = new System.Drawing.Size(131, 348);
+            this.propertyGrid.Size = new System.Drawing.Size(201, 348);
             this.propertyGrid.TabIndex = 0;
             this.propertyGrid.ToolbarVisible = false;
             // 
@@ -275,7 +275,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(145, 400);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(215, 400);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // panelColor
@@ -284,14 +284,14 @@
             this.panelColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelColor.Location = new System.Drawing.Point(3, 383);
             this.panelColor.Name = "panelColor";
-            this.panelColor.Size = new System.Drawing.Size(139, 14);
+            this.panelColor.Size = new System.Drawing.Size(209, 14);
             this.panelColor.TabIndex = 1;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(145, 400);
+            this.ClientSize = new System.Drawing.Size(215, 400);
             this.Controls.Add(this.tableLayoutPanel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FormMain";

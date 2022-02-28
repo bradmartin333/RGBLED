@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGBLES", "RGBLES\RGBLES.csproj", "{05480DA1-A1D4-4022-9CE8-6994551DB479}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGBLED", "RGBLED\RGBLED.csproj", "{05480DA1-A1D4-4022-9CE8-6994551DB479}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

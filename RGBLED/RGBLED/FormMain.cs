@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RGBLES
+namespace RGBLED
 {
     public partial class FormMain : Form
     {

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{05480DA1-A1D4-4022-9CE8-6994551DB479}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>RGBLES</RootNamespace>
-    <AssemblyName>RGBLES</AssemblyName>
+    <RootNamespace>RGBLED</RootNamespace>
+    <AssemblyName>RGBLED</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -1,4 +1,4 @@
-﻿namespace RGBLES
+﻿namespace RGBLED
 {
     partial class FormMain
     {
@@ -30,11 +30,10 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageHSV = new System.Windows.Forms.TabPage();
-            this.tabPageRGB = new System.Windows.Forms.TabPage();
-            this.tabPageSettings = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelHSV = new System.Windows.Forms.TableLayoutPanel();
             this.vScrollBarHSV = new System.Windows.Forms.VScrollBar();
             this.labelHSV = new System.Windows.Forms.Label();
+            this.tabPageRGB = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelR = new System.Windows.Forms.Label();
             this.labelG = new System.Windows.Forms.Label();
@@ -45,15 +44,16 @@
             this.vScrollBarR = new System.Windows.Forms.VScrollBar();
             this.vScrollBarG = new System.Windows.Forms.VScrollBar();
             this.vScrollBarB = new System.Windows.Forms.VScrollBar();
+            this.tabPageSettings = new System.Windows.Forms.TabPage();
+            this.propertyGrid = new System.Windows.Forms.PropertyGrid();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panelColor = new System.Windows.Forms.Panel();
-            this.propertyGrid = new System.Windows.Forms.PropertyGrid();
             this.tabControl.SuspendLayout();
             this.tabPageHSV.SuspendLayout();
-            this.tabPageRGB.SuspendLayout();
-            this.tabPageSettings.SuspendLayout();
             this.tableLayoutPanelHSV.SuspendLayout();
+            this.tabPageRGB.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tabPageSettings.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,27 +79,6 @@
             this.tabPageHSV.TabIndex = 0;
             this.tabPageHSV.Text = "HSV";
             this.tabPageHSV.UseVisualStyleBackColor = true;
-            // 
-            // tabPageRGB
-            // 
-            this.tabPageRGB.Controls.Add(this.tableLayoutPanel1);
-            this.tabPageRGB.Location = new System.Drawing.Point(4, 22);
-            this.tabPageRGB.Name = "tabPageRGB";
-            this.tabPageRGB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRGB.Size = new System.Drawing.Size(131, 348);
-            this.tabPageRGB.TabIndex = 1;
-            this.tabPageRGB.Text = "RGB";
-            this.tabPageRGB.UseVisualStyleBackColor = true;
-            // 
-            // tabPageSettings
-            // 
-            this.tabPageSettings.Controls.Add(this.propertyGrid);
-            this.tabPageSettings.Location = new System.Drawing.Point(4, 22);
-            this.tabPageSettings.Name = "tabPageSettings";
-            this.tabPageSettings.Size = new System.Drawing.Size(131, 348);
-            this.tabPageSettings.TabIndex = 2;
-            this.tabPageSettings.Text = "Settings";
-            this.tabPageSettings.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelHSV
             // 
@@ -134,6 +113,17 @@
             this.labelHSV.TabIndex = 1;
             this.labelHSV.Text = "0°";
             this.labelHSV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tabPageRGB
+            // 
+            this.tabPageRGB.Controls.Add(this.tableLayoutPanel1);
+            this.tabPageRGB.Location = new System.Drawing.Point(4, 22);
+            this.tabPageRGB.Name = "tabPageRGB";
+            this.tabPageRGB.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageRGB.Size = new System.Drawing.Size(131, 348);
+            this.tabPageRGB.TabIndex = 1;
+            this.tabPageRGB.Text = "RGB";
+            this.tabPageRGB.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -253,6 +243,25 @@
             this.vScrollBarB.Size = new System.Drawing.Size(43, 302);
             this.vScrollBarB.TabIndex = 8;
             // 
+            // tabPageSettings
+            // 
+            this.tabPageSettings.Controls.Add(this.propertyGrid);
+            this.tabPageSettings.Location = new System.Drawing.Point(4, 22);
+            this.tabPageSettings.Name = "tabPageSettings";
+            this.tabPageSettings.Size = new System.Drawing.Size(131, 348);
+            this.tabPageSettings.TabIndex = 2;
+            this.tabPageSettings.Text = "Settings";
+            this.tabPageSettings.UseVisualStyleBackColor = true;
+            // 
+            // propertyGrid
+            // 
+            this.propertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyGrid.Location = new System.Drawing.Point(0, 0);
+            this.propertyGrid.Name = "propertyGrid";
+            this.propertyGrid.Size = new System.Drawing.Size(131, 348);
+            this.propertyGrid.TabIndex = 0;
+            this.propertyGrid.ToolbarVisible = false;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -278,32 +287,23 @@
             this.panelColor.Size = new System.Drawing.Size(139, 14);
             this.panelColor.TabIndex = 1;
             // 
-            // propertyGrid
-            // 
-            this.propertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid.Location = new System.Drawing.Point(0, 0);
-            this.propertyGrid.Name = "propertyGrid";
-            this.propertyGrid.Size = new System.Drawing.Size(131, 348);
-            this.propertyGrid.TabIndex = 0;
-            this.propertyGrid.ToolbarVisible = false;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(145, 400);
             this.Controls.Add(this.tableLayoutPanel3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FormMain";
             this.Text = "RGBLED";
             this.tabControl.ResumeLayout(false);
             this.tabPageHSV.ResumeLayout(false);
-            this.tabPageRGB.ResumeLayout(false);
-            this.tabPageSettings.ResumeLayout(false);
             this.tableLayoutPanelHSV.ResumeLayout(false);
             this.tableLayoutPanelHSV.PerformLayout();
+            this.tabPageRGB.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tabPageSettings.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 

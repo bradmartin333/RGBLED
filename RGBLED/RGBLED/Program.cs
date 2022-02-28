@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RGBLES
+namespace RGBLED
 {
     internal static class Program
     {

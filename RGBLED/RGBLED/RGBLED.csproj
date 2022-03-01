@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>rgb.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Brainboxes.IO, Version=1.6.6.0, Culture=neutral, PublicKeyToken=7a8324e9f3166731, processorArchitecture=MSIL">
       <HintPath>..\packages\Brainboxes.IO.1.6.6\lib\net45\Brainboxes.IO.dll</HintPath>
@@ -86,6 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="rgb.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

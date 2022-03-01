@@ -167,6 +167,7 @@
             this.ClientSize = new System.Drawing.Size(185, 400);
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "View";
             this.Text = "RGBLED";
             this.tableLayoutPanel.ResumeLayout(false);

@@ -21,6 +21,7 @@ namespace RGBLED
             _View.PortChanged += _View_PortChanged;
             _View.PortConnectRequested += _View_PortConnectRequested;
             _View.ThrottleChanged += _View_ThrottleChanged;
+            _View.Closing += _View_Closing;
         }
 
         private void Connect()
@@ -64,6 +65,11 @@ namespace RGBLED
         {
             _Model.Throttle = (double)_View.Throttle.Value;
             _Model.SetColor();
-        } 
+        }
+
+        private void _View_Closing(object sender, EventArgs e)
+        {
+            _Model.Close();
+        }
     }
 }

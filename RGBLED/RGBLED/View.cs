@@ -15,6 +15,7 @@ namespace RGBLED
         public event EventHandler PortChanged;
         public event EventHandler PortConnectRequested;
         public event EventHandler ThrottleChanged;
+        public event EventHandler Closing;
 
         public View()
         {
@@ -28,6 +29,7 @@ namespace RGBLED
             TextBoxPort.TextChanged += delegate { PortChanged?.Invoke(TextBoxPort, EventArgs.Empty); };
             ButtonConnect.Click += delegate { PortConnectRequested?.Invoke(ButtonConnect, EventArgs.Empty); };
             NumThrottle.ValueChanged += delegate { ThrottleChanged?.Invoke(NumThrottle, EventArgs.Empty); };
+            FormClosing += delegate { Closing?.Invoke(this, EventArgs.Empty); };
             new Presenter(this, new Model());
         }
     }

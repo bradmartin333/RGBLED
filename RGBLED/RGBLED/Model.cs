@@ -50,6 +50,7 @@ namespace RGBLED
 
         public void Close()
         {
+            if (RGB_Controller != null) ClearColor();
             RGB_Controller?.Dispose();
         }
 
@@ -61,7 +62,7 @@ namespace RGBLED
             B = c.B;
             if (RGB_Controller != null)
             {
-                RGB_Controller.AOutputs[0].AValue = Map(R, toHigh: Throttle);
+                RGB_Controller.AOutputs[0].AValue = Map(R, toHigh: (Throttle / 100) * 4 + 1);
                 RGB_Controller.AOutputs[1].AValue = Map(G);
                 RGB_Controller.AOutputs[2].AValue = Map(B);
             }

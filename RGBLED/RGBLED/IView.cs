@@ -9,6 +9,7 @@ namespace RGBLED
         event EventHandler PortChanged;
         event EventHandler PortConnectRequested;
         event EventHandler ThrottleChanged;
+        event EventHandler Closing;
 
         VScrollBar ScrollBar { get; set; }
         Label ColorLabel { get; set; }

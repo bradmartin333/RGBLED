@@ -28,154 +28,146 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPageHSV = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanelHSV = new System.Windows.Forms.TableLayoutPanel();
-            this.vScrollBarHSV = new System.Windows.Forms.VScrollBar();
-            this.labelHSVval = new System.Windows.Forms.Label();
-            this.tabPageSettings = new System.Windows.Forms.TabPage();
-            this.propertyGrid = new System.Windows.Forms.PropertyGrid();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelColor = new System.Windows.Forms.Panel();
-            this.tabControl.SuspendLayout();
-            this.tabPageHSV.SuspendLayout();
-            this.tableLayoutPanelHSV.SuspendLayout();
-            this.tabPageSettings.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.PanelColor = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TextBoxPort = new System.Windows.Forms.TextBox();
+            this.ScrollHSV = new System.Windows.Forms.VScrollBar();
+            this.LabelHSV = new System.Windows.Forms.Label();
+            this.NumThrottle = new System.Windows.Forms.NumericUpDown();
+            this.tableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumThrottle)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl
+            // tableLayoutPanel
             // 
-            this.tabControl.Controls.Add(this.tabPageHSV);
-            this.tabControl.Controls.Add(this.tabPageSettings);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Location = new System.Drawing.Point(3, 3);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(209, 374);
-            this.tabControl.TabIndex = 0;
+            this.tableLayoutPanel.ColumnCount = 2;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.Controls.Add(this.PanelColor, 0, 4);
+            this.tableLayoutPanel.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.TextBoxPort, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.ScrollHSV, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.LabelHSV, 0, 3);
+            this.tableLayoutPanel.Controls.Add(this.NumThrottle, 1, 1);
+            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.RowCount = 5;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(185, 400);
+            this.tableLayoutPanel.TabIndex = 1;
             // 
-            // tabPageHSV
+            // PanelColor
             // 
-            this.tabPageHSV.Controls.Add(this.tableLayoutPanelHSV);
-            this.tabPageHSV.Location = new System.Drawing.Point(4, 22);
-            this.tabPageHSV.Name = "tabPageHSV";
-            this.tabPageHSV.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageHSV.Size = new System.Drawing.Size(201, 348);
-            this.tabPageHSV.TabIndex = 0;
-            this.tabPageHSV.Text = "HSV";
-            this.tabPageHSV.UseVisualStyleBackColor = true;
+            this.PanelColor.BackColor = System.Drawing.Color.Black;
+            this.tableLayoutPanel.SetColumnSpan(this.PanelColor, 2);
+            this.PanelColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelColor.Location = new System.Drawing.Point(3, 383);
+            this.PanelColor.Name = "PanelColor";
+            this.PanelColor.Size = new System.Drawing.Size(179, 14);
+            this.PanelColor.TabIndex = 1;
             // 
-            // tableLayoutPanelHSV
+            // label1
             // 
-            this.tableLayoutPanelHSV.ColumnCount = 1;
-            this.tableLayoutPanelHSV.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelHSV.Controls.Add(this.vScrollBarHSV, 0, 0);
-            this.tableLayoutPanelHSV.Controls.Add(this.labelHSVval, 0, 1);
-            this.tableLayoutPanelHSV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelHSV.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanelHSV.Name = "tableLayoutPanelHSV";
-            this.tableLayoutPanelHSV.RowCount = 2;
-            this.tableLayoutPanelHSV.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelHSV.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelHSV.Size = new System.Drawing.Size(195, 342);
-            this.tableLayoutPanelHSV.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 26);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Brainbox Port";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // vScrollBarHSV
+            // label2
             // 
-            this.vScrollBarHSV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vScrollBarHSV.LargeChange = 1;
-            this.vScrollBarHSV.Location = new System.Drawing.Point(0, 0);
-            this.vScrollBarHSV.Maximum = 360;
-            this.vScrollBarHSV.Name = "vScrollBarHSV";
-            this.vScrollBarHSV.Size = new System.Drawing.Size(195, 329);
-            this.vScrollBarHSV.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 26);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Red Throttle %";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelHSVval
+            // TextBoxPort
             // 
-            this.labelHSVval.AutoSize = true;
-            this.labelHSVval.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelHSVval.Location = new System.Drawing.Point(3, 329);
-            this.labelHSVval.Name = "labelHSVval";
-            this.labelHSVval.Size = new System.Drawing.Size(189, 13);
-            this.labelHSVval.TabIndex = 1;
-            this.labelHSVval.Text = "0°";
-            this.labelHSVval.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TextBoxPort.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TextBoxPort.Location = new System.Drawing.Point(86, 3);
+            this.TextBoxPort.Name = "TextBoxPort";
+            this.TextBoxPort.Size = new System.Drawing.Size(96, 20);
+            this.TextBoxPort.TabIndex = 4;
+            this.TextBoxPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tabPageSettings
+            // ScrollHSV
             // 
-            this.tabPageSettings.Controls.Add(this.propertyGrid);
-            this.tabPageSettings.Location = new System.Drawing.Point(4, 22);
-            this.tabPageSettings.Name = "tabPageSettings";
-            this.tabPageSettings.Size = new System.Drawing.Size(201, 348);
-            this.tabPageSettings.TabIndex = 2;
-            this.tabPageSettings.Text = "Settings";
-            this.tabPageSettings.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel.SetColumnSpan(this.ScrollHSV, 2);
+            this.ScrollHSV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScrollHSV.LargeChange = 1;
+            this.ScrollHSV.Location = new System.Drawing.Point(0, 52);
+            this.ScrollHSV.Maximum = 360;
+            this.ScrollHSV.Name = "ScrollHSV";
+            this.ScrollHSV.Size = new System.Drawing.Size(185, 308);
+            this.ScrollHSV.TabIndex = 6;
             // 
-            // propertyGrid
+            // LabelHSV
             // 
-            this.propertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid.Location = new System.Drawing.Point(0, 0);
-            this.propertyGrid.Name = "propertyGrid";
-            this.propertyGrid.Size = new System.Drawing.Size(201, 348);
-            this.propertyGrid.TabIndex = 0;
-            this.propertyGrid.ToolbarVisible = false;
+            this.LabelHSV.AutoSize = true;
+            this.tableLayoutPanel.SetColumnSpan(this.LabelHSV, 2);
+            this.LabelHSV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelHSV.Location = new System.Drawing.Point(3, 360);
+            this.LabelHSV.Name = "LabelHSV";
+            this.LabelHSV.Size = new System.Drawing.Size(179, 20);
+            this.LabelHSV.TabIndex = 7;
+            this.LabelHSV.Text = "0";
+            this.LabelHSV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel3
+            // NumThrottle
             // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.tabControl, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.panelColor, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(215, 400);
-            this.tableLayoutPanel3.TabIndex = 1;
+            this.NumThrottle.DecimalPlaces = 2;
+            this.NumThrottle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NumThrottle.Increment = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.NumThrottle.Location = new System.Drawing.Point(86, 29);
+            this.NumThrottle.Name = "NumThrottle";
+            this.NumThrottle.Size = new System.Drawing.Size(96, 20);
+            this.NumThrottle.TabIndex = 8;
+            this.NumThrottle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panelColor
-            // 
-            this.panelColor.BackColor = System.Drawing.Color.Black;
-            this.panelColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelColor.Location = new System.Drawing.Point(3, 383);
-            this.panelColor.Name = "panelColor";
-            this.panelColor.Size = new System.Drawing.Size(209, 14);
-            this.panelColor.TabIndex = 1;
-            // 
-            // FormView
+            // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(215, 400);
-            this.Controls.Add(this.tableLayoutPanel3);
+            this.ClientSize = new System.Drawing.Size(185, 400);
+            this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "FormView";
+            this.Name = "View";
             this.Text = "RGBLED";
-            this.tabControl.ResumeLayout(false);
-            this.tabPageHSV.ResumeLayout(false);
-            this.tableLayoutPanelHSV.ResumeLayout(false);
-            this.tableLayoutPanelHSV.PerformLayout();
-            this.tabPageSettings.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel.ResumeLayout(false);
+            this.tableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumThrottle)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPageHSV;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelHSV;
-        private System.Windows.Forms.Label labelHSVval;
-        private System.Windows.Forms.TabPage tabPageSettings;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.PropertyGrid propertyGrid;
-        public System.Windows.Forms.VScrollBar vScrollBarHSV;
-        public System.Windows.Forms.Panel panelColor;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TextBoxPort;
+        private System.Windows.Forms.VScrollBar ScrollHSV;
+        private System.Windows.Forms.Label LabelHSV;
+        private System.Windows.Forms.NumericUpDown NumThrottle;
+        private System.Windows.Forms.Panel PanelColor;
     }
 }
 

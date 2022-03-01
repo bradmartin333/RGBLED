@@ -1,21 +1,50 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RGBLED
 {
     public class Model : IModel
     {
-        private Brainboxes.IO.EDDevice RGB_Controller { get; set; }
         public int HSV { get; set; }
         public int R { get; set; }
         public int G { get; set; }
         public int B { get; set; }
-
-        public void Initialize(string portString)
+        public double Throttle { get; set; } = 43.75;
+        public string PortString { get; set; } = "192.168.1.11";
+        private Brainboxes.IO.EDDevice RGB_Controller { get; set; }
+        private readonly System.Windows.Forms.Timer BrainboxesTimout = new System.Windows.Forms.Timer
         {
-            RGB_Controller = Brainboxes.IO.EDDevice.Create(portString);
-            ClearColor();
+            Interval = 2000,
+            Enabled = false,
+        };
+        private CancellationTokenSource TokenSource = new CancellationTokenSource();
+
+        public void Initialize()
+        {
+            CancellationToken token = TokenSource.Token;
+            TaskFactory factory = new TaskFactory(token);
+            Task task = factory.StartNew(() => RGB_Controller = Brainboxes.IO.EDDevice.Create(PortString));
+            BrainboxesTimout.Tick += BrainboxesTimout_Tick;
+            BrainboxesTimout.Enabled = true;
+            BrainboxesTimout.Start();
         }
+
+        private void BrainboxesTimout_Tick(object sender, EventArgs e)
+        {
+            TokenSource.Cancel();
+            BrainboxesTimout.Tick -= BrainboxesTimout_Tick;
+            BrainboxesTimout.Enabled = false;
+            BrainboxesTimout.Stop();
+
+            if (RGB_Controller == null)
+                MessageBox.Show("Port not valid, please check network adapter and port in settings panel.", "RGBLED");
+            else
+                ClearColor();
+        }
+
         public void Close()
         {
             RGB_Controller?.Dispose();

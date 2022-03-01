@@ -1,38 +1,32 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace RGBLED
 {
     public partial class View : Form, IView
     {
-        [Category("User Parameters")]
-        [DisplayName("Red%")]
-        [Description("Percentage by which to throttle the max current delivered to the Red channel")]
-        public double RedThrottle { get; set; }
-
-        [Category("User Parameters")]
-        [DisplayName("Port")]
-        [Description("IP address of Brainboxes controller")]
-        public string PortString { get; set; } = "191.168.1.11";
         public Label ColorLabel { get; set; }
         public Panel ColorPanel { get; set; }
+        public VScrollBar ScrollBar { get; set; }
+        public TextBox Port { get; set; }
+        public NumericUpDown Throttle { get; set; }
 
         public event EventHandler SetColorHSV;
+        public event EventHandler PortChanged;
+        public event EventHandler ThrottleChanged;
 
         public View()
         {
             InitializeComponent();
+            ColorLabel = LabelHSV;
+            ColorPanel = PanelColor;
+            ScrollBar = ScrollHSV;
+            Port = TextBoxPort;
+            Throttle = NumThrottle;
+            ScrollHSV.ValueChanged += delegate { SetColorHSV?.Invoke(ScrollHSV, EventArgs.Empty); };
+            TextBoxPort.TextChanged += delegate { PortChanged?.Invoke(TextBoxPort, EventArgs.Empty); };
+            NumThrottle.ValueChanged += delegate { ThrottleChanged?.Invoke(NumThrottle, EventArgs.Empty); };
             new Presenter(this, new Model());
-
-            ColorLabel = labelHSVval;
-            ColorPanel = panelColor;
-
-            RedThrottle = 43.75;
-            propertyGrid.BrowsableAttributes = new AttributeCollection(new CategoryAttribute("User Parameters"));
-            propertyGrid.SelectedObject = this;
-
-            vScrollBarHSV.ValueChanged += delegate { SetColorHSV?.Invoke(vScrollBarHSV, EventArgs.Empty); };
         }
     }
 }

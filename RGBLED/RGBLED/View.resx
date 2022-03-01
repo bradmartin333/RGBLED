@@ -117,4 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ButtonConnect.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACwSURBVEhLtZRLDoJAEEQH8QyuNN7KC6pLT+YhcCQdUiQv
+        9DTTVPIWkHR9WFBU12f53N/jxR7zVQOmyvf2Oj3sVa4swBjqmnPumnXATO4aCDCS1rD5Qv8aMAU61rAh
+        sm8NGDkE17CJS/saOA7QsIYPQ2yvgYMoNWA4KuD/iZwfJR+6bLdWwbFDQ2sVmyDtrVVgBARbq9hwYV9r
+        FZgaHa1VYN7fWrU2T2qtOqS1Kr91KT+6e4sqivRYsgAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

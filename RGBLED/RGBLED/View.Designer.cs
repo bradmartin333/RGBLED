@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.PanelColor = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,15 +37,17 @@
             this.ScrollHSV = new System.Windows.Forms.VScrollBar();
             this.LabelHSV = new System.Windows.Forms.Label();
             this.NumThrottle = new System.Windows.Forms.NumericUpDown();
+            this.ButtonConnect = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumThrottle)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
             // 
-            this.tableLayoutPanel.ColumnCount = 2;
+            this.tableLayoutPanel.ColumnCount = 3;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.Controls.Add(this.PanelColor, 0, 4);
             this.tableLayoutPanel.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.label2, 0, 1);
@@ -52,6 +55,7 @@
             this.tableLayoutPanel.Controls.Add(this.ScrollHSV, 0, 2);
             this.tableLayoutPanel.Controls.Add(this.LabelHSV, 0, 3);
             this.tableLayoutPanel.Controls.Add(this.NumThrottle, 1, 1);
+            this.tableLayoutPanel.Controls.Add(this.ButtonConnect, 2, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
@@ -67,7 +71,7 @@
             // PanelColor
             // 
             this.PanelColor.BackColor = System.Drawing.Color.Black;
-            this.tableLayoutPanel.SetColumnSpan(this.PanelColor, 2);
+            this.tableLayoutPanel.SetColumnSpan(this.PanelColor, 3);
             this.PanelColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelColor.Location = new System.Drawing.Point(3, 383);
             this.PanelColor.Name = "PanelColor";
@@ -80,7 +84,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 26);
+            this.label1.Size = new System.Drawing.Size(77, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Brainbox Port";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,7 +93,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 26);
+            this.label2.Location = new System.Drawing.Point(3, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 26);
             this.label2.TabIndex = 3;
@@ -101,25 +105,25 @@
             this.TextBoxPort.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBoxPort.Location = new System.Drawing.Point(86, 3);
             this.TextBoxPort.Name = "TextBoxPort";
-            this.TextBoxPort.Size = new System.Drawing.Size(96, 20);
+            this.TextBoxPort.Size = new System.Drawing.Size(76, 20);
             this.TextBoxPort.TabIndex = 4;
             this.TextBoxPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ScrollHSV
             // 
-            this.tableLayoutPanel.SetColumnSpan(this.ScrollHSV, 2);
+            this.tableLayoutPanel.SetColumnSpan(this.ScrollHSV, 3);
             this.ScrollHSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ScrollHSV.LargeChange = 1;
-            this.ScrollHSV.Location = new System.Drawing.Point(0, 52);
+            this.ScrollHSV.Location = new System.Drawing.Point(0, 55);
             this.ScrollHSV.Maximum = 360;
             this.ScrollHSV.Name = "ScrollHSV";
-            this.ScrollHSV.Size = new System.Drawing.Size(185, 308);
+            this.ScrollHSV.Size = new System.Drawing.Size(185, 305);
             this.ScrollHSV.TabIndex = 6;
             // 
             // LabelHSV
             // 
             this.LabelHSV.AutoSize = true;
-            this.tableLayoutPanel.SetColumnSpan(this.LabelHSV, 2);
+            this.tableLayoutPanel.SetColumnSpan(this.LabelHSV, 3);
             this.LabelHSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelHSV.Location = new System.Drawing.Point(3, 360);
             this.LabelHSV.Name = "LabelHSV";
@@ -130,6 +134,7 @@
             // 
             // NumThrottle
             // 
+            this.tableLayoutPanel.SetColumnSpan(this.NumThrottle, 2);
             this.NumThrottle.DecimalPlaces = 2;
             this.NumThrottle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NumThrottle.Increment = new decimal(new int[] {
@@ -137,11 +142,23 @@
             0,
             0,
             131072});
-            this.NumThrottle.Location = new System.Drawing.Point(86, 29);
+            this.NumThrottle.Location = new System.Drawing.Point(86, 32);
             this.NumThrottle.Name = "NumThrottle";
             this.NumThrottle.Size = new System.Drawing.Size(96, 20);
             this.NumThrottle.TabIndex = 8;
             this.NumThrottle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ButtonConnect
+            // 
+            this.ButtonConnect.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonConnect.BackgroundImage")));
+            this.ButtonConnect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ButtonConnect.FlatAppearance.BorderSize = 0;
+            this.ButtonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonConnect.Location = new System.Drawing.Point(168, 3);
+            this.ButtonConnect.Name = "ButtonConnect";
+            this.ButtonConnect.Size = new System.Drawing.Size(14, 23);
+            this.ButtonConnect.TabIndex = 9;
+            this.ButtonConnect.UseVisualStyleBackColor = true;
             // 
             // View
             // 
@@ -168,6 +185,7 @@
         private System.Windows.Forms.Label LabelHSV;
         private System.Windows.Forms.NumericUpDown NumThrottle;
         private System.Windows.Forms.Panel PanelColor;
+        private System.Windows.Forms.Button ButtonConnect;
     }
 }
 

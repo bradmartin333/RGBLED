@@ -16,10 +16,16 @@ namespace RGBLED
             _View.ScrollBar.Focus();
             _View.Port.Text = _Model.PortString;
             _View.Throttle.Value = (decimal)_Model.Throttle;
-            _Model.Initialize();
+            Connect();
             _View.SetColorHSV += SetColorHSV;
             _View.PortChanged += _View_PortChanged;
+            _View.PortConnectRequested += _View_PortConnectRequested;
             _View.ThrottleChanged += _View_ThrottleChanged;
+        }
+
+        private void Connect()
+        {
+            if (!_Model.Initialize()) _View.Port.BackColor = System.Drawing.Color.LightCoral;
         }
 
         private void SetColorHSV(object sender, EventArgs e)
@@ -32,12 +38,32 @@ namespace RGBLED
 
         private void _View_PortChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            TextBox textBox = (TextBox)sender;
+            string portBuffer = textBox.Text;
+            string[] parts = portBuffer.Split('.');
+            bool validPort = parts.Length == 4;
+            if (validPort)
+                foreach (string part in parts)
+                    validPort = int.TryParse(part, out int _);
+            if (validPort)
+            {
+                _Model.PortString = portBuffer;
+                _View.Port.BackColor = System.Drawing.Color.White;
+            }
+            else
+                _View.Port.BackColor = System.Drawing.Color.Gold;
+        }
+
+        private void _View_PortConnectRequested(object sender, EventArgs e)
+        {
+            _View.Port.Text = _Model.PortString;
+            Connect();
         }
 
         private void _View_ThrottleChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
+            _Model.Throttle = (double)_View.Throttle.Value;
+            _Model.SetColor();
+        } 
     }
 }

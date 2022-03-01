@@ -14,7 +14,7 @@ namespace RGBLED
         void ClearColor();
         void Close();
         Color ColorFromHSV(double hue, double value = 1, double saturation = 1);
-        void Initialize();
+        bool Initialize();
         double Map(double value, double fromLow = 0, double fromHigh = 255, double toLow = 4.5, double toHigh = 1);
     }
 }

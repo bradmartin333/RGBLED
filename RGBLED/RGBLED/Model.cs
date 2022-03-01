@@ -17,12 +17,12 @@ namespace RGBLED
         private Brainboxes.IO.EDDevice RGB_Controller { get; set; }
         private readonly System.Windows.Forms.Timer BrainboxesTimout = new System.Windows.Forms.Timer
         {
-            Interval = 2000,
+            Interval = 1000,
             Enabled = false,
         };
         private CancellationTokenSource TokenSource = new CancellationTokenSource();
 
-        public void Initialize()
+        public bool Initialize()
         {
             CancellationToken token = TokenSource.Token;
             TaskFactory factory = new TaskFactory(token);
@@ -30,6 +30,9 @@ namespace RGBLED
             BrainboxesTimout.Tick += BrainboxesTimout_Tick;
             BrainboxesTimout.Enabled = true;
             BrainboxesTimout.Start();
+            while (BrainboxesTimout.Enabled)
+                Application.DoEvents();
+            return !(RGB_Controller == null);
         }
 
         private void BrainboxesTimout_Tick(object sender, EventArgs e)

@@ -32,7 +32,7 @@ namespace RGBLED
         {
             _Model.HSV = ((VScrollBar)sender).Value;
             _Model.SetColor();
-            _View.ColorLabel.Text = _Model.HSV.ToString();
+            _View.ColorLabel.Text = _Model.HSV.ToString() + '°';
             _View.ColorPanel.BackColor = System.Drawing.Color.FromArgb(_Model.R, _Model.G, _Model.B);
         }
 

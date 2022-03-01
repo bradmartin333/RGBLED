@@ -32,7 +32,7 @@ namespace RGBLED
             BrainboxesTimout.Start();
             while (BrainboxesTimout.Enabled)
                 Application.DoEvents();
-            return !(RGB_Controller == null);
+            return RGB_Controller != null;
         }
 
         private void BrainboxesTimout_Tick(object sender, EventArgs e)
@@ -59,6 +59,12 @@ namespace RGBLED
             R = c.R;
             G = c.G;
             B = c.B;
+            if (RGB_Controller != null)
+            {
+                RGB_Controller.AOutputs[0].AValue = Map(R, toHigh: Throttle);
+                RGB_Controller.AOutputs[1].AValue = Map(G);
+                RGB_Controller.AOutputs[2].AValue = Map(B);
+            }
         }
 
         public void ClearColor()

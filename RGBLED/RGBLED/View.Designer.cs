@@ -64,7 +64,7 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(185, 400);
             this.tableLayoutPanel.TabIndex = 1;
             // 
@@ -73,9 +73,9 @@
             this.PanelColor.BackColor = System.Drawing.Color.Black;
             this.tableLayoutPanel.SetColumnSpan(this.PanelColor, 3);
             this.PanelColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelColor.Location = new System.Drawing.Point(3, 383);
+            this.PanelColor.Location = new System.Drawing.Point(3, 368);
             this.PanelColor.Name = "PanelColor";
-            this.PanelColor.Size = new System.Drawing.Size(179, 14);
+            this.PanelColor.Size = new System.Drawing.Size(179, 29);
             this.PanelColor.TabIndex = 1;
             // 
             // label1
@@ -117,7 +117,7 @@
             this.ScrollHSV.Location = new System.Drawing.Point(0, 55);
             this.ScrollHSV.Maximum = 360;
             this.ScrollHSV.Name = "ScrollHSV";
-            this.ScrollHSV.Size = new System.Drawing.Size(185, 305);
+            this.ScrollHSV.Size = new System.Drawing.Size(185, 290);
             this.ScrollHSV.TabIndex = 6;
             // 
             // LabelHSV
@@ -125,11 +125,11 @@
             this.LabelHSV.AutoSize = true;
             this.tableLayoutPanel.SetColumnSpan(this.LabelHSV, 3);
             this.LabelHSV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelHSV.Location = new System.Drawing.Point(3, 360);
+            this.LabelHSV.Location = new System.Drawing.Point(3, 345);
             this.LabelHSV.Name = "LabelHSV";
             this.LabelHSV.Size = new System.Drawing.Size(179, 20);
             this.LabelHSV.TabIndex = 7;
-            this.LabelHSV.Text = "0";
+            this.LabelHSV.Text = "0°";
             this.LabelHSV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NumThrottle

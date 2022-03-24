@@ -38,8 +38,11 @@
             this.LabelHSV = new System.Windows.Forms.Label();
             this.NumThrottle = new System.Windows.Forms.NumericUpDown();
             this.ButtonConnect = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.NumWhite = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumThrottle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumWhite)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
@@ -48,18 +51,21 @@
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Controls.Add(this.PanelColor, 0, 4);
+            this.tableLayoutPanel.Controls.Add(this.PanelColor, 0, 5);
             this.tableLayoutPanel.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel.Controls.Add(this.TextBoxPort, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.ScrollHSV, 0, 2);
-            this.tableLayoutPanel.Controls.Add(this.LabelHSV, 0, 3);
-            this.tableLayoutPanel.Controls.Add(this.NumThrottle, 1, 1);
+            this.tableLayoutPanel.Controls.Add(this.ScrollHSV, 0, 3);
+            this.tableLayoutPanel.Controls.Add(this.LabelHSV, 0, 4);
+            this.tableLayoutPanel.Controls.Add(this.NumThrottle, 1, 2);
             this.tableLayoutPanel.Controls.Add(this.ButtonConnect, 2, 0);
+            this.tableLayoutPanel.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.NumWhite, 1, 1);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 5;
+            this.tableLayoutPanel.RowCount = 6;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -93,7 +99,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 29);
+            this.label2.Location = new System.Drawing.Point(3, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 26);
             this.label2.TabIndex = 3;
@@ -114,10 +120,10 @@
             this.tableLayoutPanel.SetColumnSpan(this.ScrollHSV, 3);
             this.ScrollHSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ScrollHSV.LargeChange = 1;
-            this.ScrollHSV.Location = new System.Drawing.Point(0, 55);
+            this.ScrollHSV.Location = new System.Drawing.Point(0, 81);
             this.ScrollHSV.Maximum = 360;
             this.ScrollHSV.Name = "ScrollHSV";
-            this.ScrollHSV.Size = new System.Drawing.Size(185, 290);
+            this.ScrollHSV.Size = new System.Drawing.Size(185, 264);
             this.ScrollHSV.TabIndex = 6;
             // 
             // LabelHSV
@@ -142,7 +148,7 @@
             0,
             0,
             131072});
-            this.NumThrottle.Location = new System.Drawing.Point(86, 32);
+            this.NumThrottle.Location = new System.Drawing.Point(86, 58);
             this.NumThrottle.Name = "NumThrottle";
             this.NumThrottle.Size = new System.Drawing.Size(96, 20);
             this.NumThrottle.TabIndex = 8;
@@ -160,6 +166,32 @@
             this.ButtonConnect.TabIndex = 9;
             this.ButtonConnect.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(3, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 26);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "White";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // NumWhite
+            // 
+            this.tableLayoutPanel.SetColumnSpan(this.NumWhite, 2);
+            this.NumWhite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NumWhite.Location = new System.Drawing.Point(86, 32);
+            this.NumWhite.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.NumWhite.Name = "NumWhite";
+            this.NumWhite.Size = new System.Drawing.Size(96, 20);
+            this.NumWhite.TabIndex = 11;
+            this.NumWhite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +205,7 @@
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumThrottle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumWhite)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,6 +220,8 @@
         private System.Windows.Forms.NumericUpDown NumThrottle;
         private System.Windows.Forms.Panel PanelColor;
         private System.Windows.Forms.Button ButtonConnect;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown NumWhite;
     }
 }
 

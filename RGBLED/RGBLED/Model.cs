@@ -12,6 +12,7 @@ namespace RGBLED
         public int R { get; set; }
         public int G { get; set; }
         public int B { get; set; }
+        public int W { get; set; }
         public double Throttle { get; set; } = 43.75;
         public string PortString { get; set; } = "192.168.1.11";
         private Brainboxes.IO.EDDevice RGB_Controller { get; set; }
@@ -65,6 +66,7 @@ namespace RGBLED
                 RGB_Controller.AOutputs[0].AValue = Map(R, toHigh: (Throttle / 100) * 4 + 1);
                 RGB_Controller.AOutputs[1].AValue = Map(G);
                 RGB_Controller.AOutputs[2].AValue = Map(B);
+                RGB_Controller.AOutputs[3].AValue = Map(W);
             }
         }
 

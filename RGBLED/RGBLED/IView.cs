@@ -8,6 +8,7 @@ namespace RGBLED
         event EventHandler SetColorHSV;
         event EventHandler PortChanged;
         event EventHandler PortConnectRequested;
+        event EventHandler WhiteChanged;
         event EventHandler ThrottleChanged;
         event EventHandler Closing;
 
@@ -15,6 +16,7 @@ namespace RGBLED
         Label ColorLabel { get; set; }
         Panel ColorPanel { get; set; }
         TextBox Port { get; set; }
+        NumericUpDown White { get; set; }
         NumericUpDown Throttle { get; set; }
         void Show();
     }

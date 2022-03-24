@@ -20,6 +20,7 @@ namespace RGBLED
             _View.SetColorHSV += SetColorHSV;
             _View.PortChanged += _View_PortChanged;
             _View.PortConnectRequested += _View_PortConnectRequested;
+            _View.WhiteChanged += _View_WhiteChanged;
             _View.ThrottleChanged += _View_ThrottleChanged;
             _View.Closing += _View_Closing;
         }
@@ -59,6 +60,12 @@ namespace RGBLED
         {
             _View.Port.Text = _Model.PortString;
             Connect();
+        }
+
+        private void _View_WhiteChanged(object sender, EventArgs e)
+        {
+            _Model.W = (int)_View.White.Value;
+            _Model.SetColor();
         }
 
         private void _View_ThrottleChanged(object sender, EventArgs e)

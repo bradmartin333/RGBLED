@@ -8,6 +8,7 @@ namespace RGBLED
         int R { get; set; }
         int G { get; set; }
         int B { get; set; }
+        int W { get; set; }
         double Throttle { get; set; }
         string PortString { get; set; }
         void SetColor();

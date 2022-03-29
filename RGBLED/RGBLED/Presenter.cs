@@ -15,14 +15,12 @@ namespace RGBLED
             _View.Show();
             _View.ScrollBar.Focus();
             _View.Port.Text = _Model.PortString;
-            _View.Throttle.Value = (decimal)_Model.Throttle;
             Connect();
             _View.SetColorHSV += SetColorHSV;
-            _View.PortChanged += _View_PortChanged;
-            _View.PortConnectRequested += _View_PortConnectRequested;
-            _View.WhiteChanged += _View_WhiteChanged;
-            _View.ThrottleChanged += _View_ThrottleChanged;
-            _View.Closing += _View_Closing;
+            _View.PortChanged += View_PortChanged;
+            _View.PortConnectRequested += View_PortConnectRequested;
+            _View.WhiteChanged += View_WhiteChanged;
+            _View.Closing += View_Closing;
         }
 
         private void Connect()
@@ -38,7 +36,7 @@ namespace RGBLED
             _View.ColorPanel.BackColor = System.Drawing.Color.FromArgb(_Model.R, _Model.G, _Model.B);
         }
 
-        private void _View_PortChanged(object sender, EventArgs e)
+        private void View_PortChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             string portBuffer = textBox.Text;
@@ -56,25 +54,19 @@ namespace RGBLED
                 _View.Port.BackColor = System.Drawing.Color.Gold;
         }
 
-        private void _View_PortConnectRequested(object sender, EventArgs e)
+        private void View_PortConnectRequested(object sender, EventArgs e)
         {
             _View.Port.Text = _Model.PortString;
             Connect();
         }
 
-        private void _View_WhiteChanged(object sender, EventArgs e)
+        private void View_WhiteChanged(object sender, EventArgs e)
         {
             _Model.W = (int)_View.White.Value;
             _Model.SetColor();
         }
 
-        private void _View_ThrottleChanged(object sender, EventArgs e)
-        {
-            _Model.Throttle = (double)_View.Throttle.Value;
-            _Model.SetColor();
-        }
-
-        private void _View_Closing(object sender, EventArgs e)
+        private void View_Closing(object sender, EventArgs e)
         {
             _Model.Close();
         }

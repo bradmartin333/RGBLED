@@ -9,7 +9,6 @@ namespace RGBLED
         event EventHandler PortChanged;
         event EventHandler PortConnectRequested;
         event EventHandler WhiteChanged;
-        event EventHandler ThrottleChanged;
         event EventHandler Closing;
 
         VScrollBar ScrollBar { get; set; }
@@ -17,7 +16,6 @@ namespace RGBLED
         Panel ColorPanel { get; set; }
         TextBox Port { get; set; }
         NumericUpDown White { get; set; }
-        NumericUpDown Throttle { get; set; }
         void Show();
     }
 }

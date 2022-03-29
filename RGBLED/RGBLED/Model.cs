@@ -13,7 +13,6 @@ namespace RGBLED
         public int G { get; set; }
         public int B { get; set; }
         public int W { get; set; }
-        public double Throttle { get; set; } = 43.75;
         public string PortString { get; set; } = "192.168.1.11";
         private Brainboxes.IO.EDDevice RGB_Controller { get; set; }
         private readonly System.Windows.Forms.Timer BrainboxesTimout = new System.Windows.Forms.Timer
@@ -21,10 +20,11 @@ namespace RGBLED
             Interval = 1000,
             Enabled = false,
         };
-        private CancellationTokenSource TokenSource = new CancellationTokenSource();
+        private readonly CancellationTokenSource TokenSource = new CancellationTokenSource();
 
         public bool Initialize()
         {
+            Close();
             CancellationToken token = TokenSource.Token;
             TaskFactory factory = new TaskFactory(token);
             Task task = factory.StartNew(() => RGB_Controller = Brainboxes.IO.EDDevice.Create(PortString));
@@ -33,7 +33,7 @@ namespace RGBLED
             BrainboxesTimout.Start();
             while (BrainboxesTimout.Enabled)
                 Application.DoEvents();
-            return RGB_Controller != null;
+            return RGB_Controller != null && RGB_Controller.IsAvailable;
         }
 
         private void BrainboxesTimout_Tick(object sender, EventArgs e)
@@ -44,15 +44,25 @@ namespace RGBLED
             BrainboxesTimout.Stop();
 
             if (RGB_Controller == null)
-                MessageBox.Show("Port not valid, please check network adapter and port in settings panel.", "RGBLED");
+                ShowErrorMsgAndReset("BT0");
             else
+            {
+                RGB_Controller?.Connect();
                 ClearColor();
+            }
         }
 
         public void Close()
         {
             if (RGB_Controller != null) ClearColor();
-            RGB_Controller?.Dispose();
+            RGB_Controller?.Disconnect();
+            RGB_Controller = null;
+        }
+
+        private void ShowErrorMsgAndReset(string msg)
+        {
+            MessageBox.Show($"Port not valid, please check network adapter and port in settings panel.\nTry retsarting application\tError {msg}", "RGBLED");
+            RGB_Controller = null;
         }
 
         public void SetColor()
@@ -61,21 +71,41 @@ namespace RGBLED
             R = c.R;
             G = c.G;
             B = c.B;
-            if (RGB_Controller != null)
+
+            if (RGB_Controller != null && RGB_Controller.IsAvailable)
             {
-                RGB_Controller.AOutputs[0].AValue = Map(R, toHigh: (Throttle / 100) * 4 + 1);
-                RGB_Controller.AOutputs[1].AValue = Map(G);
-                RGB_Controller.AOutputs[2].AValue = Map(B);
-                RGB_Controller.AOutputs[3].AValue = Map(W);
+                try
+                {
+                    RGB_Controller.AOutputs[3].AValue = Map(R, toLow: 4.157);
+                    RGB_Controller.AOutputs[2].AValue = Map(G, toLow: 4.176);
+                    RGB_Controller.AOutputs[1].AValue = Map(B, toLow: 4.157);
+                    RGB_Controller.AOutputs[0].AValue = Map(W, toLow: 4.157);
+                }
+                catch (Exception)
+                {
+                    ShowErrorMsgAndReset("SC0");
+                }
             }
+            else
+                ShowErrorMsgAndReset("SC1");
         }
 
         public void ClearColor()
         {
             // Set all channels to 5V
             // All output channels = reference voltage = 100% dimmed
-            RGB_Controller.AOutputs.AValues = 5;
-        }
+            if (RGB_Controller != null && RGB_Controller.IsAvailable)
+                try
+                {
+                    RGB_Controller.AOutputs.AValues = 5;
+                }
+                catch (Exception)
+                {
+                    ShowErrorMsgAndReset("CC0");
+                }
+            else
+                ShowErrorMsgAndReset("CC1");
+    }
 
         public Color ColorFromHSV(double hue, double value = 1, double saturation = 1)
         {
@@ -105,7 +135,7 @@ namespace RGBLED
                 return Color.FromArgb(255, v, p, q);
         }
 
-        public double Map(double value, double fromLow = 0, double fromHigh = 255, double toLow = 4.5, double toHigh = 1)
+        public double Map(double value, double fromLow = 0, double fromHigh = 255, double toLow = 4.5, double toHigh = 0)
         {
             // Based on the BuckPuck datasheet, mapping to 1V - 4.5V will get the full range without waste
             return (value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow;

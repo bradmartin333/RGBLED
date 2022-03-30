@@ -76,10 +76,10 @@ namespace RGBLED
             {
                 try
                 {
-                    RGB_Controller.AOutputs[3].AValue = Map(R, toLow: 4.157);
-                    RGB_Controller.AOutputs[2].AValue = Map(G, toLow: 4.176);
-                    RGB_Controller.AOutputs[1].AValue = Map(B, toLow: 4.157);
-                    RGB_Controller.AOutputs[0].AValue = Map(W, toLow: 4.157);
+                    RGB_Controller.AOutputs[3].AValue = Map(R);
+                    RGB_Controller.AOutputs[2].AValue = Map(G);
+                    RGB_Controller.AOutputs[1].AValue = Map(B);
+                    RGB_Controller.AOutputs[0].AValue = Map(W);
                 }
                 catch (Exception)
                 {
@@ -135,9 +135,8 @@ namespace RGBLED
                 return Color.FromArgb(255, v, p, q);
         }
 
-        public double Map(double value, double fromLow = 0, double fromHigh = 255, double toLow = 4.5, double toHigh = 0)
+        public double Map(double value, double fromLow = 0, double fromHigh = 255, double toLow = 4.2, double toHigh = 1)
         {
-            // Based on the BuckPuck datasheet, mapping to 1V - 4.5V will get the full range without waste
             return (value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow;
         }
     }

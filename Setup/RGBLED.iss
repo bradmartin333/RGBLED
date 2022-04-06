@@ -23,7 +23,7 @@ DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=S:\RGBLED\Setup
+OutputDir=C:\Users\brad.martin\source\repos\RGBLED\Setup
 OutputBaseFilename=RGBLED_Setup
 Compression=lzma
 SolidCompression=yes
@@ -36,10 +36,10 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "S:\RGBLED\RGBLED\RGBLED\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "S:\RGBLED\RGBLED\RGBLED\bin\Release\Brainboxes.IO.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "S:\RGBLED\RGBLED\RGBLED\bin\Release\RGBLED.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "S:\RGBLED\RGBLED\RGBLED\bin\Release\RGBLED.pdb"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\brad.martin\source\repos\RGBLED\RGBLED\RGBLED\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\brad.martin\source\repos\RGBLED\RGBLED\RGBLED\bin\Release\Brainboxes.IO.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\brad.martin\source\repos\RGBLED\RGBLED\RGBLED\bin\Release\RGBLED.exe.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\brad.martin\source\repos\RGBLED\RGBLED\RGBLED\bin\Release\RGBLED.pdb"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

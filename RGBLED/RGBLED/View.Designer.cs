@@ -150,11 +150,6 @@
             this.tableLayoutPanel.SetColumnSpan(this.NumWhite, 2);
             this.NumWhite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NumWhite.Location = new System.Drawing.Point(79, 32);
-            this.NumWhite.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
             this.NumWhite.Name = "NumWhite";
             this.NumWhite.Size = new System.Drawing.Size(103, 20);
             this.NumWhite.TabIndex = 11;

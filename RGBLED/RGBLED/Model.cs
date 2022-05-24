@@ -76,10 +76,10 @@ namespace RGBLED
             {
                 try
                 {
-                    RGB_Controller.AOutputs[3].AValue = Map(R);
-                    RGB_Controller.AOutputs[2].AValue = Map(G);
-                    RGB_Controller.AOutputs[1].AValue = Map(B);
-                    RGB_Controller.AOutputs[0].AValue = Map(W, fromLow: -2, fromHigh: 100, toHigh: 1);
+                    RGB_Controller.AOutputs[2].AValue = Map(R);
+                    RGB_Controller.AOutputs[0].AValue = Map(G);
+                    RGB_Controller.AOutputs[3].AValue = Map(B);
+                    RGB_Controller.AOutputs[1].AValue = Map(W, fromLow: 0, fromHigh: 100, toHigh: 1);
                 }
                 catch (Exception)
                 {
@@ -135,7 +135,7 @@ namespace RGBLED
                 return Color.FromArgb(255, v, p, q);
         }
 
-        public double Map(double value, double fromLow = 0, double fromHigh = 255, double toLow = 4.2, double toHigh = 4.0)
+        public double Map(double value, double fromLow = 0, double fromHigh = 255, double toLow = 4.2, double toHigh = 3.75)
         {
             return (value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow;
         }

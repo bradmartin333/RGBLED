@@ -36,10 +36,10 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\brad.martin\source\repos\RGBLED\RGBLED\RGBLED\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\brad.martin\source\repos\RGBLED\RGBLED\RGBLED\bin\Release\Brainboxes.IO.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\brad.martin\source\repos\RGBLED\RGBLED\RGBLED\bin\Release\RGBLED.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\brad.martin\source\repos\RGBLED\RGBLED\RGBLED\bin\Release\RGBLED.pdb"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Repos\RGBLED\RGBLED\RGBLED\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Repos\RGBLED\RGBLED\RGBLED\bin\Release\Brainboxes.IO.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Repos\RGBLED\RGBLED\RGBLED\bin\Release\RGBLED.exe.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Repos\RGBLED\RGBLED\RGBLED\bin\Release\RGBLED.pdb"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

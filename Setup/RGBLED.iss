@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "RGBLED"
-#define MyAppVersion "1.0"
+#define MyAppVersion "1.1"
 #define MyAppPublisher "X Display Company"
 #define MyAppURL "https://www.xdisplay.com/"
 #define MyAppExeName "RGBLED.exe"
@@ -23,7 +23,7 @@ DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=C:\Users\brad.martin\source\repos\RGBLED\Setup
+OutputDir=C:\Repos\RGBLED\Setup
 OutputBaseFilename=RGBLED_Setup
 Compression=lzma
 SolidCompression=yes
